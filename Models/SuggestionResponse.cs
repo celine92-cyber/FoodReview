@@ -18,7 +18,9 @@ namespace FoodReview.Models
         public string FavoriteDish { get; set; }
 
 
-        [Required] [PhoneAttribute]
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        //[Phone]
         public string RestaurantPhone { get; set; }
 
     }

@@ -21,18 +21,18 @@ namespace FoodReview.Models
         public string RestaurantName { get; set; }
 
         #nullable enable
-        public string? FavoriteDish { get; set; } = "It's all tasty!";
+        public string? FavoriteDish { get; set; } = "It's all tasty!";//default value for null input
 
         [Required]
         public string Address { get; set; }
 
-        [Phone]
+        [DataType(DataType.PhoneNumber)]
         public string RestaurantPhone { get; set; }
 
         #nullable enable
-        public string WebsiteLink { get; set; } = "Coming Soon!";
+        public string WebsiteLink { get; set; } = "Coming Soon!";//default value for null input
 
-
+        //Propopulate the restaurant info
         public static Restaurants[] GetRestaurants()
         {
             Restaurants r1 = new Restaurants(5)

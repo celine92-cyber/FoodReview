@@ -14,7 +14,7 @@ namespace FoodReview.Models
 
         public static void AddSuggestions(SuggestionResponse suggestion)
         {
-             suggestions.Add(suggestion);
+             suggestions.Add(suggestion);//add submitted suggestion
         }
     }
 }

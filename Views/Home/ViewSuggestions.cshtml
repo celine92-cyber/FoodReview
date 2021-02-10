@@ -6,31 +6,36 @@
 }
 
 @model IEnumerable<FoodReview.Models.SuggestionResponse>
-<div class="text-center">
-    <table>
-        <thead>
-            <tr>
-                <th><b>Reviewer Name</b></th>
-                <th><b>Restaurant Name</b></th>
-                <th><b>Favorite Dish</b></th>
-                <th><b>Restaurant Phone</b></th>
-            </tr>
-        </thead>
 
-        <tbody>
 
-            @foreach (FoodReview.Models.SuggestionResponse x in Model)
-            {
+<!--Return a list of suggestions in a table-->
+<div class="row justify-content-center">
+    <div class="col-auto">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Reviewer Name</th>
+                    <th>Restaurant Name</th>
+                    <th>Favorite Dish</th>
+                    <th>Restaurant Phone</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (FoodReview.Models.SuggestionResponse x in Model)
+                {
                     <tr>
                         <td>@x.Name</td>
                         <td>@x.RestaurantName</td>
                         <td>@x.FavoriteDish</td>
                         <td>@x.RestaurantPhone</td>
                     </tr>
-               
-            }
 
-        </tbody>
-    </table>
+                }
+
+            </tbody>
+        </table>
+    </div>
 </div>
 

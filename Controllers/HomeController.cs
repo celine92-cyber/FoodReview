@@ -18,7 +18,7 @@ namespace FoodReview.Controllers
             _logger = logger;
         }
 
-        
+        //output the prepopulated array to the index view
         public IActionResult Index()
         {
             List<string> restaurantList;
@@ -33,12 +33,15 @@ namespace FoodReview.Controllers
             return View(restaurantList);
         }
 
+        //get the suggestion info
         [HttpGet]
         public IActionResult SubmitSuggestion()
         {
             return View();
         }
 
+
+        //return suggestion completition confirmation to the user
         [HttpPost]
         public IActionResult SubmitSuggestion(SuggestionResponse suggestionResponse)
         {
@@ -46,6 +49,7 @@ namespace FoodReview.Controllers
             return View("Confirmation", suggestionResponse);
         }
 
+        //return all suggestions input
         public IActionResult ViewSuggestions()
         {
             return View(AddedSuggestions.Suggestions);
