@@ -20,6 +20,7 @@ namespace FoodReview.Models
         [Required]
         public string RestaurantName { get; set; }
 
+        #nullable enable
         public string? FavoriteDish { get; set; } = "It's all tasty!";
 
         [Required]
@@ -28,7 +29,8 @@ namespace FoodReview.Models
         [Phone]
         public string RestaurantPhone { get; set; }
 
-        public string WebsiteLink { get; set; }
+#nullable enable
+        public string WebsiteLink { get; set; } = "Coming Soon!";
 
 
         public static Restaurants[] GetRestaurants()
@@ -47,8 +49,7 @@ namespace FoodReview.Models
                 RestaurantName = "PhoPlus Provo",
                 FavoriteDish = "Steak and Flank Pho",
                 Address = "68 W Center St, Provo, UT 84601-4417",
-                RestaurantPhone = "801-377-8808",
-                WebsiteLink = "Coming Soon"
+                RestaurantPhone = "801-377-8808"
             };
 
             Restaurants r2 = new Restaurants(4)
