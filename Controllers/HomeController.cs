@@ -27,7 +27,7 @@ namespace FoodReview.Controllers
             foreach (Restaurants r in Restaurants.GetRestaurants())
             {
 
-                restaurantList.Add($"Rank:{r.RestaurantRanking} stars {r.RestaurantName} {r.FavoriteDish} {r.Address} {r.RestaurantPhone} {r.WebsiteLink}");
+                restaurantList.Add($"Rank:{r.RestaurantRanking}  ||  stars {r.RestaurantName}  ||   {r.FavoriteDish}   ||  {r.Address}   ||  {r.RestaurantPhone}  ||  {r.WebsiteLink}");
             }
 
             return View(restaurantList);
@@ -45,8 +45,16 @@ namespace FoodReview.Controllers
         [HttpPost]
         public IActionResult SubmitSuggestion(SuggestionResponse suggestionResponse)
         {
-            AddedSuggestions.AddSuggestions(suggestionResponse);
-            return View("Confirmation", suggestionResponse);
+            if (ModelState.IsValid)
+            { 
+                AddedSuggestions.AddSuggestions(suggestionResponse);
+                return View("Confirmation", suggestionResponse);
+            }
+
+            else
+            {
+                return View();
+            }
         }
 
         //return all suggestions input

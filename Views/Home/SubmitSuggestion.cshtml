@@ -24,8 +24,10 @@
     <div>
         <label asp-for="RestaurantPhone">Restaurant Phone</label>
         <input asp-for="RestaurantPhone" required />
+        <p>Phone Input Example: 3856668996</p>
     </div>
 
 
     <button type="submit">Submit Your Suggestion</button>
+    <div asp-validation-summary="All"></div>
 </form>

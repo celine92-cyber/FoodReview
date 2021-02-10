@@ -18,9 +18,11 @@ namespace FoodReview.Models
         public string FavoriteDish { get; set; }
 
 
-        [Required]
-        [DataType(DataType.PhoneNumber)]
-        //[Phone]
+        [Required(ErrorMessage ="You need to enter a valid phone number")]
+        //[DataType(DataType.PhoneNumber)]
+        [Phone(ErrorMessage = "Please enter a valid phone number")]
+        [MaxLength(10,ErrorMessage ="Please enter 10 digits phone number without any symbols")]
+        [MinLength(10, ErrorMessage = "Please enter 10 digits phone number without any symbols")]
         public string RestaurantPhone { get; set; }
 
     }
