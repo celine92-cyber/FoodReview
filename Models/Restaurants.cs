@@ -29,7 +29,7 @@ namespace FoodReview.Models
         [Phone]
         public string RestaurantPhone { get; set; }
 
-#nullable enable
+        #nullable enable
         public string WebsiteLink { get; set; } = "Coming Soon!";
 
 
