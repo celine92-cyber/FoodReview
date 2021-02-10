@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Top 5 Restaurants in Provo";
+}
+@model IEnumerable<string>
+
+<div class="text-center">
+    <img src="~/img/food.jpg" width="700" />
+    <h2>Welcome to Provo, Utah!</h2>
+    <p>We know that you are a big food lover. So we carefully selected the top restaurant in town for you!</p>
+    <p>Enjoy your trip here!</p>
+</div>
+
+<div class="list-group">
+    <!--Print out the prepopulated restaurants info-->
+    <ul>
+        @foreach (string r in Model)
+        {
+            <li class="list-group-item">@r</li>
+        }
+    </ul>
+</div>
